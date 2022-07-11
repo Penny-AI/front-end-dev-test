@@ -1,0 +1,14 @@
+<div [ngClass]="'container'">
+  <div [ngClass]="'row'">
+    <div *ngIf="progress !== 100">
+      <h2 [ngStyle]="{ 'text-align': 'center' }">
+        Connecting... {{ progress }}%
+      </h2>
+    </div>
+    <div *ngIf="progress === 100">
+      <h2 [ngStyle]="{ 'text-align': 'center' }">Connected</h2>
+    </div>
+
+    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+  </div>
+</div>
